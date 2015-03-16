@@ -38,7 +38,7 @@ grad = zeros(size(theta));
 
 h = sigmoid(X*theta);
 theta_reg = [0;theta(2:end)];
-J = -sum((log(h).*y + log(1-h).*(1-y)))/m + sum(theta_reg .^ 2)*lambda/(2*m)
+J = -sum((log(h).*y + log(1-h).*(1-y)))/m + sum(theta_reg .^ 2)*lambda/(2*m);
 
 grad = (transpose(X) * (h - y) + theta_reg * lambda)/m;
 
